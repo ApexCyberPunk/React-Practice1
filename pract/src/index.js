@@ -2,18 +2,19 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 
-
-const firstBook = {
+const books = [ {
     author: 'bookie moor',
     title: 'heaven Sent',
     img: 'https://images-na.ssl-images-amazon.com/images/I/61sp+sMfrXL._AC_UL600_SR600,400_.jpg'
-}
+},
 
-const secondBook = {
+ {
     author: 'mike boo',
     title: 'get it done',
     img: 'https://images-na.ssl-images-amazon.com/images/I/51XwpaLa1oL._AC_UL600_SR600,400_.jpg'
-}
+} ]
+
+
 
 function BookList() {
     return (
