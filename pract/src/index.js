@@ -5,38 +5,47 @@ import './index.css'
 const books = [ {
     author: 'bookie moor',
     title: 'heaven Sent',
-    img: 'https://images-na.ssl-images-amazon.com/images/I/61sp+sMfrXL._AC_UL600_SR600,400_.jpg'
+    img: 'https://images-na.ssl-images-amazon.com/images/I/61sp+sMfrXL._AC_UL600_SR600,400_.jpg',
+    id: 1,
 },
 
  {
     author: 'mike boo',
     title: 'get it done',
-    img: 'https://images-na.ssl-images-amazon.com/images/I/51XwpaLa1oL._AC_UL600_SR600,400_.jpg'
+    img: 'https://images-na.ssl-images-amazon.com/images/I/51XwpaLa1oL._AC_UL600_SR600,400_.jpg',
+    id: 2,
+
 } ]
 
+const names = ['jogn', 'pet', 'jook']
+
+// const newNames = names.map((name) => {
+//     console.log(name)
+//     return <h1>{name}</h1>
+// })
 
 
-function BookList() {
-    return (
-        <section className='booklist'>
-        <Book author={firstBook.author} title={firstBook.title} img={firstBook.img}/>
-        <Book author={secondBook.author} title={secondBook.title} img={secondBook.img}/>
-        </section>
-        
-    )
+const BookList = () => {
+ return (
+    <section className='booklist'>
+        {books.map(({img, title, author, id}) => {
+            
+            return (
+                <Book img={img} title={title} author={author} key={id} />
+            )
+        })}
+    </section>
+ )
 }
 
 
-const Book = (props) => {
+const Book = ({img, title, author}) => {
 
     return (
         <article className='book'>
-        <img src={props.img} alt={props.title}/>
-      <h2>{props.title}</h2>
-      <p>{props.author}</p>
-      
-    
-    {console.log(props)}
+        <img src={img} alt={title}/>
+      <h2>{title}</h2>
+      <p>{author}</p>
         </article>
     )
 }
